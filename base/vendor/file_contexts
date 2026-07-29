@@ -1449,13 +1449,3 @@
 # Context Hub Runtime Environment
 /data/vendor/chre(/.*)?                                          u:object_r:chre_data_file:s0
 /vendor/bin/hw/android\.hardware\.contexthub-service\.tinysys    u:object_r:hal_contexthub_default_exec:s0
-
-# iSE app loader
-/(vendor|system/vendor)/bin/ise_apploader   u:object_r:ise_apploader_exec:s0
-
-# Virtual Machines
-/dev/pkvm_vendor_mtk_tz                                                                    u:object_r:pkvm_mtk_tz_device:s0
-/vendor/bin/hw/android.hardware.virtualization.capabilities.capabilities_service-mtk_tz    u:object_r:hal_vm_capabilities_default_exec:s0
-
-# Vendor Firmwares
-/(vendor|system/vendor)/firmware(/.*)?                        u:object_r:vendor_fw_file:s0
