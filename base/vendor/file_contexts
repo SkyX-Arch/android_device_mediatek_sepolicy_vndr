@@ -923,6 +923,10 @@
 /(vendor|system/vendor)/bin/istorageproxyd                                                      u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/teei_loader                                                         u:object_r:tee_exec:s0
 
+# OP-TEE
+/(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.0-service\.optee           u:object_r:hal_keymaster_default_exec:s0
+/data/vendor/tee(/.*)?                                                                   u:object_r:tee_data_file:s0
+
 # MiTEE
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper-service\.mitee                     u:object_r:hal_gatekeeper_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.identity-service\.mitee@5.0                   u:object_r:hal_identity_default_exec:s0
