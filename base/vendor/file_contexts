@@ -956,12 +956,12 @@
 /(vendor|system/vendor)/bin/hw/vendor\.trustonic\.tee(@1\.1)?-service                                            u:object_r:hal_tee_default_exec:s0
 /(vendor|system/vendor)/bin/mcDriverDaemon                                                                       u:object_r:mobicore_exec:s0
 
-# Microtrust TEE Lite
-/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.beanpod\.lite        u:object_r:hal_gatekeeper_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.itrusty              u:object_r:hal_gatekeeper_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.[0-9]+-service\.beanpod\.lite    u:object_r:hal_keymaster_default_exec:s0
-/(vendor|system/vendor)/bin/istorageproxyd                                                      u:object_r:tee_exec:s0
-/(vendor|system/vendor)/bin/teei_loader                                                         u:object_r:tee_exec:s0
+# TrustKernel TEE
+/(vendor|system/vendor)/app/t6(/.*)?                                                                      u:object_r:tkcore_systa_file:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper-service\.trustkernel                         u:object_r:hal_gatekeeper_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.[0-9]+-service\.trustkernel                u:object_r:hal_keymaster_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint(@[0-9]+\.0+)?-service\.trustkernel    u:object_r:hal_keymint_default_exec:s0
+/(vendor|system/vendor)/bin/teed                                                                          u:object_r:tee_exec:s0
 
 # OP-TEE
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.0-service\.optee           u:object_r:hal_keymaster_default_exec:s0
@@ -1107,10 +1107,6 @@
 # Purpose : DBReleasePlan
 /(odm|vendor/odm|vendor)/bin/crossbuild(/.*)? u:object_r:vendor_bin_crossbuild_file:s0
 
-# TrustKernel add
-/(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.0-service\.trustkernel u:object_r:hal_keymaster_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.1-service\.trustkernel u:object_r:hal_keymaster_default_exec:s0
-
 /(vendor|system/vendor)/bin/thermal                                               u:object_r:thermal_exec:s0
 /(vendor|system/vendor)/bin/volte_rcs_ua                                          u:object_r:volte_rcs_ua_exec:s0
 /(vendor|system/vendor)/bin/volte_rcs_ua64                                        u:object_r:volte_rcs_ua_exec:s0
@@ -1204,9 +1200,6 @@
 
 # DMC Packet Monitor (PKM)
 /vendor/bin/mtk_pkm_service u:object_r:mtk_pkm_service_exec:s0
-
-# TrustKernel add
-/vendor/bin/teed u:object_r:tee_exec:s0
 
 # MTK MDM
 /vendor/bin/md_monitor u:object_r:md_monitor_exec:s0
