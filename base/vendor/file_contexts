@@ -134,9 +134,6 @@
 /data/vendor/mitee(/.*)?          u:object_r:mitee_data_file:s0
 /mnt/vendor/persist/data(/.*)?    u:object_r:mitee_sfs_file:s0
 
-# OP-TEE
-/data/vendor/tee(/.*)?    u:object_r:tee_data_file:s0
-
 ##########################
 # Devices
 #
@@ -940,6 +937,16 @@
 /(vendor|system/vendor)/bin/istorageproxyd                                                      u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/teei_loader                                                         u:object_r:tee_exec:s0
 
+# MiTEE
+/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper-service\.mitee                     u:object_r:hal_gatekeeper_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.identity-service\.mitee@5.0                   u:object_r:hal_identity_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.0-service\.mitee                 u:object_r:hal_keymaster_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint@[0-9]+\.0-service\.mitee    u:object_r:hal_keymint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.secretkeeper\.mitee                 u:object_r:hal_secretkeeper_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.secure_element-service                 u:object_r:hal_secure_element_default_exec:s0
+/(vendor|system/vendor)/bin/miteelog                                                            u:object_r:tee_exec:s0
+/(vendor|system/vendor)/bin/tee-supplicant                                                      u:object_r:tee_exec:s0
+
 # Trustonic TEE
 /(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint(@[0-9]+\.0+)?-service\.trustonic(_norkp)? u:object_r:hal_keymint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.security\.secretkeeper@1\.0-service\.trustonic              u:object_r:hal_secretkeeper_default_exec:s0
@@ -956,15 +963,8 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.0-service\.optee           u:object_r:hal_keymaster_default_exec:s0
 /data/vendor/tee(/.*)?                                                                   u:object_r:tee_data_file:s0
 
-# MiTEE
-/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper-service\.mitee                     u:object_r:hal_gatekeeper_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.identity-service\.mitee@5.0                   u:object_r:hal_identity_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@4\.0-service\.mitee                 u:object_r:hal_keymaster_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint@[0-9]+\.0-service\.mitee    u:object_r:hal_keymint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.security\.secretkeeper\.mitee                 u:object_r:hal_secretkeeper_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.secure_element-service                 u:object_r:hal_secure_element_default_exec:s0
-/(vendor|system/vendor)/bin/miteelog                                                            u:object_r:tee_exec:s0
-/(vendor|system/vendor)/bin/tee-supplicant                                                      u:object_r:tee_exec:s0
+# UFS
+/dev/ufs-bsg0       u:object_r:ufs_bsg_device:s0
 
 # NXP StrongBox
 /(vendor|system/vendor)/bin/hw/android\.hardware\.security\.keymint-service\.strongbox\.nxp     u:object_r:hal_keymint_default_exec:s0
