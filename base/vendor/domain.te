@@ -24,15 +24,7 @@ allow {
 
 # Date: 2022/07/28
 # Purpose :allow appdomain to use gpu aidl
-# Note: this cannot be granted to `domain` because API level 202604 added a
-# neverallow in system/sepolicy/private/native_app_zygote.te which forbids
-# native_app_zygote from finding any service_manager_type service, and that
-# platform-private type cannot be subtracted from vendor policy. Add individual
-# domains here if a non-app client needs to look up this service.
-allow {
-  appdomain
-  -isolated_app_all
-} mtk_hal_mali_platform_default_service:service_manager find;
+allow { appdomain -isolated_app_all } mtk_hal_mali_platform_default_service:service_manager find;
 
 # Date : WK15.29
 # Operation : Migration
